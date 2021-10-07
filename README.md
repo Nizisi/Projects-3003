@@ -1,3 +1,6 @@
+# Update
+Working on earning to use unity now, play to do the visual myself as well
+
 # Requirements:
     - Design and implement a class. 
     - Use subclassing to design simple class hierarchies that allow code to be reused for distinct subclasses.
