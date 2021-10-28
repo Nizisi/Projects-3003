@@ -2,7 +2,8 @@
 After trying unity, unreal, and godot on my computer, SFML become my choice for this project
 
 # Current
-Learning SFML, and drawing. Still want to draw a decent visual for this simple game (working on)
+Learning SFML, and Drawing.
+Still want to draw a decent visual for this simple game (working on)
 
 # Game info
 So far, it will be a vertical jumping game with visuals.
