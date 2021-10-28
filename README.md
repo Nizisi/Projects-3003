@@ -1,5 +1,24 @@
 # Update
-Working on earning to use unity now, play to do the visual myself as well
+After trying unity, unreal, and godot on my computer, SFML become my choice for this project
+
+# Current
+Learning SFML, and drawing. Still want to draw a decent visual for this simple game (working on)
+
+# Game info
+So far, it will be a vertical jumping game with visuals.
+
+# feature
+- players jump on the platform to go higher (working on)
+- score ( plan to add)
+- ability to use rocket pack(plan to add)
+
+
+
+
+
+
+
+
 
 # Requirements:
     - Design and implement a class. 
@@ -12,13 +31,6 @@ Working on earning to use unity now, play to do the visual myself as well
     - Follow best practices for documentation
 
 
-# Project Options
-- Certifcation Exam Preparation Program 
-- Cracking the Coding Interview programming problem solution 
-- QT C++ GUI Tutorial For Beginners $
-- A mobile app
-- A game
-- Blazor app
 
 ------------------------------------------------------------------------------------------------------------------
 
