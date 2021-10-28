@@ -13,6 +13,9 @@
 // larning drawing texture now.
 int main()
 {
+    // to use sfml class in my class, inheritance needed?
+
+
     // a class to store the texture I need for the game in OOP rewrite
     // fields: texture- background, player, platform
     // function: use the picture I draw as texture
@@ -36,9 +39,13 @@ int main()
     // a loop to show the window
     while (game.isOpen())
     {
+        // following is to check the event before any display
         sf::Event event;
         while (game.pollEvent(event))
         {
+
+
+            // close event trigger the window to close
             if (event.type == sf::Event::Closed)
                 game.close();
         }
