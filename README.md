@@ -1,6 +1,6 @@
 # Update
-After trying unity, unreal, and godot on my computer, SFML become my choice for this project
-
+After trying unity, unreal, and godot on my computer, SFML become my choice for this project. I underestimate the difficulty to learn new stuff to make something which slower my
+work
 # Current
 Learning SFML, and Drawing.
 Still want to draw a decent visual for this simple game (working on)
