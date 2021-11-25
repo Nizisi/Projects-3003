@@ -43,7 +43,7 @@ int main()
     for (int i = 0; i < 10; i++)
     {
 
-        platform[i].x = rand() % 689;
+        platform[i].x = rand() % 500 + 129; // avoid plat generate on the wall
         platform[i].y = rand() % 596;
     }
 
@@ -66,12 +66,13 @@ int main()
         playerPos.checkInput();
 
         // Moving the player up and down
-        pos.dy += 0.2;
+        //I set the jump velocity at this rate because random generate platform sometimes make the player 
+        //impossible to survive, but at this velocity can probably ensure  player to survive 
+        pos.dy += 0.1; 
         playerPos.iniY += pos.dy;
 
         // player died
-
-        if (playerPos.iniY > 500)
+        if (playerPos.iniY > 520)
         {
 
             pos.dy = -10;
@@ -110,11 +111,11 @@ int main()
             for (int i = 0; i < 10; i++)
             {
                 playerPos.iniY = playerPos.iniH;
-                platform[i].y = platform[i].y - pos.dy;
+                platform[i].y = platform[i].y - pos.dy;// for the platform to go down when player go up
                 if (platform[i].y > 596)
                 {
-                    platform[i].y = 0;
-                    platform[i].x = rand() % 689;
+                    platform[i].y = 0; //new plat will appear at the top of screen
+                    platform[i].x = rand() % 500 + 129;
                 }
             }
         }
@@ -122,8 +123,8 @@ int main()
         //check whether hit the plat
         for (int i = 0; i < 10; i++)
         {
-            if ((playerPos.iniY + 70) > platform[i].y && (playerPos.iniY + 70) < (platform[i].y + 14) && pos.dy > 0
-                && platform[i].x < (playerPos.iniX + 50) && (playerPos.iniX + 20) < (platform[i].x + 68))
+            if ((playerPos.iniY + 75) > platform[i].y && (playerPos.iniY + 75) < (platform[i].y + 15) && pos.dy > 0
+                && platform[i].x < (playerPos.iniX + 60) && (playerPos.iniX + 15) < (platform[i].x + 60))
             {
                 pos.dy = -10;
             }
@@ -134,6 +135,7 @@ int main()
 
         // Reset Position of player
         player.setPosition(playerPos.iniX, playerPos.iniY);
+        
 
         //// Reset locations of sprites
         game.draw(background);
@@ -145,9 +147,6 @@ int main()
             game.draw(plat);
 
         }
-
-
-
 
         game.display();
     }

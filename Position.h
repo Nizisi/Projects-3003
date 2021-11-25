@@ -12,7 +12,8 @@ public:
     float dx = 0; // Velocity
     float dy = 0;
 
-    virtual void setPos() {}
+    virtual void jump() {
+    }
 };
 
 class PlayerPosition : public Position
@@ -23,7 +24,10 @@ public:
     int iniX = 100;
     int iniY = 100;
 
-    void setPos() {}
+    void jump() {
+        dy += 0.2;
+        iniY += dy;
+    }
 
     void checkInput()
     {
@@ -50,7 +54,7 @@ public:
     int iniY;
 
 
-    void setPos() {}
+    void jump() {}
 };
 
 
