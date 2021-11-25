@@ -42,111 +42,113 @@ void mainGame() {
     }
 
     // above is all for the set of the game
-
-
-
-
+    
     // a loop to show the window
     while (game.isOpen())
     {
-        // following is to check the event before any display
-        sf::Event event;
-        while (game.pollEvent(event))
-        {
-            // close event trigger the window to close
-            if (event.type == sf::Event::Closed)
-                game.close();
-        }
-
-
-        playerPos.checkInput();
-
-        // Moving the player up and down
-        pos.dy += 0.2;
-        playerPos.iniY += pos.dy;
-
-        // player died
-
-        if (playerPos.iniY > 500)
-        {
-
-            pos.dy = -10;
-            while (game.isOpen())
+        
+            // following is to check the event before any display
+            sf::Event event;
+            while (game.pollEvent(event))
             {
-                sf::Event event;
-                while (game.pollEvent(event))
-                {
-                    // close event trigger the window to close
-                    if (event.type == sf::Event::Closed)
-                        game.close();
-                }
-                game.clear();
-                game.draw(gameOver);
-                game.display();
-
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
-                {
+                // close event trigger the window to close
+                if (event.type == sf::Event::Closed)
                     game.close();
-                }
-                if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+            }
+
+
+            playerPos.checkInput();
+
+            // Moving the player up and down
+            pos.dy += 0.2;
+            playerPos.iniY += pos.dy;
+
+            // player died
+
+            if (playerPos.iniY > 500)
+            {
+
+                pos.dy = -10;
+                while (game.isOpen())
                 {
-                    //need a way to reset the game loop here
+                    sf::Event event;
+                    while (game.pollEvent(event))
+                    {
+                        // close event trigger the window to close
+                        if (event.type == sf::Event::Closed)
+                            game.close();
+                    }
+                    game.clear();
+                    game.draw(gameOver);
+                    game.display();
+
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
+                    {
+                        game.close();
+                    }
+                    if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
+                    {
+                        //need a way to reset the game loop here
+
+                        continue;
+                        
+                    }
+
                 }
+
 
             }
 
 
-        }
+            //check whether player move up
+            if (playerPos.iniY < playerPos.iniH)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    playerPos.iniY = playerPos.iniH;
+                    platform[i].y = platform[i].y - pos.dy;
+                    if (platform[i].y > 596)
+                    {
+                        platform[i].y = 0;
+                        platform[i].x = rand() % 689;
+                    }
+                }
+            }
 
-
-        //check whether player move up
-        if (playerPos.iniY < playerPos.iniH)
-        {
+            //check whether hit the plat
             for (int i = 0; i < 10; i++)
             {
-                playerPos.iniY = playerPos.iniH;
-                platform[i].y = platform[i].y - pos.dy;
-                if (platform[i].y > 596)
+                if ((playerPos.iniY + 70) > platform[i].y && (playerPos.iniY + 70) < (platform[i].y + 14) && pos.dy > 0
+                    && platform[i].x < (playerPos.iniX + 50) && (playerPos.iniX + 20) < (platform[i].x + 68))
                 {
-                    platform[i].y = 0;
-                    platform[i].x = rand() % 689;
+                    pos.dy = -10;
                 }
-            }
-        }
 
-        //check whether hit the plat
-        for (int i = 0; i < 10; i++)
-        {
-            if (platform[i].x < (playerPos.iniX + 50) && (playerPos.iniX + 20) < (platform[i].x + 68)
-                && (playerPos.iniY + 70) > platform[i].y && (playerPos.iniY + 70) < (platform[i].y + 14) && pos.dy > 0)
+
+            }
+
+
+            // Reset Position of player
+            player.setPosition(playerPos.iniX, playerPos.iniY);
+
+            //// Reset locations of sprites
+            game.draw(background);
+            game.draw(player);
+            for (int i = 0; i < 10; i++)
             {
-                pos.dy = -10;
+                plat.setPosition(platform[i].x, platform[i].y);
+
+                game.draw(plat);
+
             }
 
 
+
+
+            game.display();
         }
-
-
-        // Reset Position of player
-        player.setPosition(playerPos.iniX, playerPos.iniY);
-
-        //// Reset locations of sprites
-        game.draw(background);
-        game.draw(player);
-        for (int i = 0; i < 10; i++)
-        {
-            plat.setPosition(platform[i].x, platform[i].y);
-
-            game.draw(plat);
-
-        }
-
-
-
-
-        game.display();
     }
-}
+
 
 
 #endif // !GAME_H
