@@ -123,10 +123,12 @@ int main()
         //check whether hit the plat
         for (int i = 0; i < 10; i++)
         {
-            if ((playerPos.iniY + 75) > platform[i].y && (playerPos.iniY + 75) < (platform[i].y + 15) && pos.dy > 0
-                && platform[i].x < (playerPos.iniX + 60) && (playerPos.iniX + 15) < (platform[i].x + 60))
+            if ((playerPos.iniY + 75) > platform[i].y && (playerPos.iniY + 75) < (platform[i].y + 15) && pos.dy > 0)
             {
-                pos.dy = -10;
+                if (platform[i].x < (playerPos.iniX + 60) && (playerPos.iniX + 15) < (platform[i].x + 60))
+                {
+                    pos.dy = -10;
+                }
             }
 
 
