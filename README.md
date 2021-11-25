@@ -1,4 +1,6 @@
 # Update
+new: -fix the problem of platform generate on the side wall by having a minimum x coordinate add to the random generator and lower maximum x coordinate
+
 After trying unity, unreal, and godot on my computer, SFML become my choice for this project. I underestimate the difficulty to learn new stuff to make something which slower my
 work
 # Current
