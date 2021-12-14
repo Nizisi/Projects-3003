@@ -8,10 +8,10 @@ Class is COP 3003, I made this project mainly at home.<br />
 ![Sample GIF](JNIzrIgziU.gif) 
 
 ## Documentation
-
+[Doxygen](https://nizisi.github.io/Projects-3003/html/)
 
 ## Diagrams
-
+![Sample Image](docs/html/classloc_point.png)
 
 ## Getting Started
 
