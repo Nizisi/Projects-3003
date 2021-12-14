@@ -1,41 +1,38 @@
-# Update
-new: 
-- fix the problem of platform generate on the side wall by having a minimum x coordinate add to the random generator and lower maximum x coordinate
-- having the problem of platform overlap with eachother (working on)\
-old:
-- After trying unity, unreal, and godot on my computer, SFML become my choice for this project. I underestimate the difficulty to learn new stuff to make something which slower my
-work
-# Current
-Learning SFML, and Drawing.
-Still want to draw a decent visual for this simple game (working on)
+# Space Jump SFML Game
+Space Jump SFML Game is a vertical jumping game base on sfml library wrote by me with researchable resource from the SFML offical website.<br />
+I made it mainly during November, I think I'm still in the entry level for C++ coding.<br />
+This project is for the class final project.<br />
+Class is COP 3003, I made this project mainly at home.<br />
 
-# Game info
-So far, it will be a vertical jumping game with visuals.
-
-# feature
-- players jump on the platform to go higher (working on)
-- score ( plan to add)
-- ability to use rocket pack(plan to add)
+## Demonstration
 
 
+## Documentation
 
 
+## Diagrams
 
 
+## Getting Started
 
 
-
-# Requirements:
-    - Design and implement a class. 
-    - Use subclassing to design simple class hierarchies that allow code to be reused for distinct subclasses.
-    - Correctly reason about control flow in a program using dynamic dispatch. 
-    - Explain the relationship between object-oriented inheritance (code-sharing and overriding) and subtyping (the idea of a subtype being usable in a context that expects the      supertype).
-    - Use object-oriented encapsulation mechanisms such as interfaces and private members.
-    - Define and use iterators and other operations on aggregates, including operations that take functions as arguments. 
-    - Follow best practices for style and readability
-    - Follow best practices for documentation
+## Built With
 
 
+## Contributing
 
-------------------------------------------------------------------------------------------------------------------
+
+## Author
+
+
+## License
+
+
+## Acknowledgments
+
+
+## History
+
+
+## Key Programming Concepts Utilized
 
