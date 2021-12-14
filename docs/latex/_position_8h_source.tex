@@ -1,0 +1,73 @@
+\hypertarget{_position_8h_source}{}\doxysection{D\+:/c++proj/repos/\+SFML\+\_\+\+Prototype/\+Position.h}
+\mbox{\hyperlink{_position_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#ifndef POSITION\_H}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#define POSITION\_H}}
+\DoxyCodeLine{23 }
+\DoxyCodeLine{24 }
+\DoxyCodeLine{27 \textcolor{keyword}{class }\mbox{\hyperlink{classloc_point}{locPoint}}                  \textcolor{comment}{//LO1}}
+\DoxyCodeLine{28 \{}
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \textcolor{keywordtype}{int} x\{ 0 \};}
+\DoxyCodeLine{31     \textcolor{keywordtype}{int} y\{ 0 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36     \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} \mbox{\hyperlink{classloc_point_a65b60a35369bde510bda4f2b15057920}{algorithm}}() \{\};}
+\DoxyCodeLine{37     \textcolor{comment}{//LO3. to calculate location point, an algorithm is necessary no matter who's location, therefore, I use dynamic dispatch here for possible extend in derived class}}
+\DoxyCodeLine{38 \};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{43 \textcolor{comment}{//LO2a. the public fields in locPoint are free to use in playerLoc class without restriction}}
+\DoxyCodeLine{44 }
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classplayer_loc}{playerLoc}} :\textcolor{keyword}{public} \mbox{\hyperlink{classloc_point}{locPoint}}    \textcolor{comment}{//LO2   }}
+\DoxyCodeLine{46 \{}
+\DoxyCodeLine{47 \textcolor{keyword}{public}:}
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} locH = 200; \textcolor{comment}{// player location}}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} locX = 100;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} locY = 100;}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52     \textcolor{keywordtype}{float} dx = 0.0; \textcolor{comment}{// Velocity}}
+\DoxyCodeLine{53     \textcolor{keywordtype}{float} dy = 0.0;}
+\DoxyCodeLine{54 }
+\DoxyCodeLine{55 }
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classplayer_loc_ac54ea885ee66125b0a5706ada1039303}{algorithm}}()}
+\DoxyCodeLine{59     \{}
+\DoxyCodeLine{64         dy += 0.1;}
+\DoxyCodeLine{65         locY += dy;}
+\DoxyCodeLine{66     \}}
+\DoxyCodeLine{67 }
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} \mbox{\hyperlink{classplayer_loc_a794169ed6e01a462b2723b20e15f98ce}{moveRightCheck}}()}
+\DoxyCodeLine{71     \{}
+\DoxyCodeLine{72         \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))}
+\DoxyCodeLine{73         \{}
+\DoxyCodeLine{74             \textcolor{keywordflow}{if} (locX < 625)             \textcolor{comment}{//set limitation so the player wont go through the wall}}
+\DoxyCodeLine{75                 locX += 4;}
+\DoxyCodeLine{76         \}}
+\DoxyCodeLine{77     \}}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{81     \textcolor{keywordtype}{void} \mbox{\hyperlink{classplayer_loc_ac83997f2ee98958dd683c6ac95cde3d8}{moveLeftCheck}}()}
+\DoxyCodeLine{82     \{}
+\DoxyCodeLine{83         \textcolor{keywordflow}{if} (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))}
+\DoxyCodeLine{84         \{}
+\DoxyCodeLine{85             \textcolor{keywordflow}{if} (locX > 100)}
+\DoxyCodeLine{86                 locX -\/= 4;}
+\DoxyCodeLine{87         \}}
+\DoxyCodeLine{88 }
+\DoxyCodeLine{89     \}}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91 }
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 \};}
+\DoxyCodeLine{94 }
+\DoxyCodeLine{95 }
+\DoxyCodeLine{98 \textcolor{keyword}{class }\mbox{\hyperlink{classplat_loc}{platLoc}} :\textcolor{keyword}{public} \mbox{\hyperlink{classloc_point}{locPoint}}  \textcolor{comment}{//LO2}}
+\DoxyCodeLine{99 \{}
+\DoxyCodeLine{100 \textcolor{keyword}{public}:}
+\DoxyCodeLine{101     \textcolor{keywordtype}{void} \mbox{\hyperlink{classplat_loc_a14800c7820f4621d22c7713e1463cbb0}{algorithm}}() \{\};}
+\DoxyCodeLine{102 \};}
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 \textcolor{preprocessor}{\#endif }}
+
+\end{DoxyCode}

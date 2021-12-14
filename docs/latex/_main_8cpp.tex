@@ -1,0 +1,52 @@
+\hypertarget{_main_8cpp}{}\doxysection{D\+:/c++proj/repos/\+SFML\+\_\+\+Prototype/\+Main.cpp File Reference}
+\label{_main_8cpp}\index{D:/c++proj/repos/SFML\_Prototype/Main.cpp@{D:/c++proj/repos/SFML\_Prototype/Main.cpp}}
+
+
+main program for jumping game  
+
+
+{\ttfamily \#include $<$SFML/\+Graphics.\+hpp$>$}\newline
+{\ttfamily \#include $<$time.\+h$>$}\newline
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include \char`\"{}visual.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Position.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}plat\+Math.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+main program for jumping game 
+
+This main program contain the main game loop for the jumping game, also contains setting for the display window , frame rate, and random generator base on time
+
+\begin{DoxyAuthor}{Author}
+Jie Zhou class \+: COP 3003 CRN 80602
+\end{DoxyAuthor}
+\begin{DoxyRefDesc}{Bug}
+\item[\mbox{\hyperlink{bug__bug000001}{Bug}}]No known bugs.\end{DoxyRefDesc}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Main.cpp@{Main.cpp}!main@{main}}
+\index{main@{main}!Main.cpp@{Main.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+major game loop
+
+following is to check the event before any display
+
+if player died, create a loop to draw a gameover screen
+
+check whether player move up and move the camera up
+
+check whether player jump on the platform
+
+draw the sprite
+
+the order of the drawing matters

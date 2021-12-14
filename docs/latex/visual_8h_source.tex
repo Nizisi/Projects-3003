@@ -1,0 +1,47 @@
+\hypertarget{visual_8h_source}{}\doxysection{D\+:/c++proj/repos/\+SFML\+\_\+\+Prototype/visual.h}
+\mbox{\hyperlink{visual_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <SFML/Graphics.hpp>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <time.h>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#ifndef VISUAL\_H}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#define VISUAL\_H}}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{25 \textcolor{keyword}{class }\mbox{\hyperlink{class_visual}{Visual}}            \textcolor{comment}{//LO1}}
+\DoxyCodeLine{26 \{}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 \textcolor{keyword}{public}:}
+\DoxyCodeLine{30     \textcolor{comment}{// only 3 texture needed in the game, for access and control the total mber, I use protected}}
+\DoxyCodeLine{31     sf::Texture back;}
+\DoxyCodeLine{32     sf::Texture plat;}
+\DoxyCodeLine{33     sf::Texture player;}
+\DoxyCodeLine{34     sf::Texture gameOver;}
+\DoxyCodeLine{35     sf::Sprite spBack;}
+\DoxyCodeLine{36     sf::Sprite spPlat;}
+\DoxyCodeLine{37     sf::Sprite spPlayer;}
+\DoxyCodeLine{38     sf::Sprite spGameOver;}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_visual_a4c21eeac0a3e63caef65ef8454145d81}{setUP}}();}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 \};}
+\DoxyCodeLine{43 }
+\DoxyCodeLine{46 \textcolor{keywordtype}{void} \mbox{\hyperlink{class_visual_a4c21eeac0a3e63caef65ef8454145d81}{Visual::setUP}}()}
+\DoxyCodeLine{47 \{}
+\DoxyCodeLine{48     back.loadFromFile(\textcolor{stringliteral}{"{}images/background02.png"{}});}
+\DoxyCodeLine{49     plat.loadFromFile(\textcolor{stringliteral}{"{}images/plat.png"{}});}
+\DoxyCodeLine{50     player.loadFromFile(\textcolor{stringliteral}{"{}images/player.png"{}});}
+\DoxyCodeLine{51     gameOver.loadFromFile(\textcolor{stringliteral}{"{}images/gameOver.png"{}});}
+\DoxyCodeLine{52     spBack.setTexture(back);}
+\DoxyCodeLine{53     spPlat.setTexture(plat);}
+\DoxyCodeLine{54     spPlayer.setTexture(player);}
+\DoxyCodeLine{55     spGameOver.setTexture(gameOver);}
+\DoxyCodeLine{56 \}}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{58 }
+\DoxyCodeLine{59 \textcolor{preprocessor}{\#endif }}
+\DoxyCodeLine{60 }
+
+\end{DoxyCode}
