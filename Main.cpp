@@ -25,7 +25,9 @@
 #include <iostream>
 #include "visual.h"
 #include "Position.h"
+#include "handle.h"
 #include <SFML/Graphics.hpp>
+
 
 
 int main()
@@ -41,6 +43,7 @@ int main()
 	Visual visual;
 	playerLoc playerLoc;
 
+	handle handle;
 
 	visual.setUP();//LO1a
 
@@ -70,37 +73,10 @@ int main()
 
 		playerLoc.algorithm();      //LO1a
 
-		/** @brief if player died, create a loop to draw a gameover screen
-		*/
-		if (playerLoc.locY > 520)
-		{
+		handle.checkOver(game,playerLoc,visual);
 
 
-			while (game.isOpen())
-			{
-				sf::Event event;
-				while (game.pollEvent(event))
-				{
-					// close event trigger the window to close
-					if (event.type == sf::Event::Closed)
-						game.close();
-				}
-				game.clear();
-				game.draw(visual.spGameOver);
-				game.display();
-
-
-				//user can press x to close the game
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::X))
-				{
-					game.close();
-				}
-
-
-			}
-
-
-		}
+			
 
 		/** @brief check whether player move up and move the camera up
 		*/
