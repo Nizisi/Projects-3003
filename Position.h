@@ -95,10 +95,21 @@ public:
 
 /** @brief derived from location point , a location point for platform is probably necessary.
 */
-class platLoc :public locPoint  //LO2
+class platLoc :public locPoint //LO2
 {
 public:
-	void algorithm() {};
+	
+
+
+	void algorithm(platLoc platform[]) {
+		for (int i = 0; i < 20; i++)
+		{
+			/** @brief avoid plat generate on the wall
+			*/
+			platform[i].x = rand() % 500 + 129;
+			platform[i].y = rand() % 596;
+		}
+	};
 };
 
 #endif 
