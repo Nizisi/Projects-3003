@@ -25,7 +25,7 @@
 #include <iostream>
 #include "visual.h"
 #include "Position.h"
-#include "platMath.h"
+#include <SFML/Graphics.hpp>
 
 
 int main()
@@ -45,7 +45,8 @@ int main()
 	visual.setUP();//LO1a
 
 	//// Localize all platforms randomly
-	randomLocPlat();
+	platLoc platform[20];
+	platform->algorithm(platform);
 
 
 	/** @brief major game loop
