@@ -26,6 +26,7 @@
 #include "visual.h"
 #include "Position.h"
 #include "handle.h"
+#include "platMath.h"
 #include <SFML/Graphics.hpp>
 
 
@@ -78,48 +79,9 @@ int main()
 
 			
 
-		/** @brief check whether player move up and move the camera up
-		*/
-		if (playerLoc.locY < playerLoc.locH)
-		{
-			for (int i = 0; i < 20; i++)
-			{
-				playerLoc.locY = playerLoc.locH;
+		handle.cam_platspawn(playerLoc, platform);
 
-
-				platform[i].y = platform[i].y - playerLoc.dy;// for the platform to go down when player go up
-
-
-				if (platform[i].y > 596)
-				{
-					platform[i].x = rand() % 500 + 129;
-					platform[i].y = 0; //new plat will appear at the top of screen
-
-				}
-			}
-		}
-
-		/** @brief check whether player jump on the platform
-		*/
-		for (int i = 0; i < 20; i++)
-		{
-			//first, check the location on Y for both platform and player (the height of each sprite with involved, but specific number is necessary to adjust)
-			if ((playerLoc.locY + 75) > platform[i].y && (playerLoc.locY + 75) < (platform[i].y + 15))
-			{
-
-				// then check location on X for both object
-				if (platform[i].x < (playerLoc.locX + 60) && (playerLoc.locX + 15) < (platform[i].x + 60))
-				{
-					//make sure the player is jump onto the plate with velocity check
-					if (playerLoc.dy > 0)
-					{
-						playerLoc.dy = -10;
-					}
-				}
-			}
-
-
-		}
+		handle.collicheck(playerLoc, platform);
 
 		// above is the hit check and the camera, main game function end above
 
@@ -129,23 +91,7 @@ int main()
 		* the order of the drawing matters
 		*/
 
-		game.draw(visual.spBack);
-
-
-		visual.spPlayer.setPosition(playerLoc.locX, playerLoc.locY);// take the updated location, then draw
-		game.draw(visual.spPlayer);
-
-		for (int i = 0; i < 20; i++)
-		{
-			visual.spPlat.setPosition(platform[i].x, platform[i].y);// take the updated location, then draw
-
-			game.draw(visual.spPlat);
-
-		}
-
-
-		//display
-		game.display();
+		handle.paint(game, playerLoc, platform, visual);
 	}
 
 

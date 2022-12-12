@@ -16,25 +16,31 @@
 #ifndef PLATMATH_H
 #define PLATMATH_H
 
- /** @brief make array for a list of 20 platforms
-  */
-platLoc platform[20];
+ /** @brief check whether player move up and move the camera up
+		 */
 
+void collicheck(playerLoc playerLoc, platLoc platform[]) {
 
-/** @brief Localize all platforms randomly with limitation in the window
- */
-
-void randomLocPlat()
-{
 	for (int i = 0; i < 20; i++)
 	{
-		/** @brief avoid plat generate on the wall
-		*/
-		platform[i].x = rand() % 500 + 129;
-		platform[i].y = rand() % 596;
+		//first, check the location on Y for both platform and player (the height of each sprite with involved, but specific number is necessary to adjust)
+		if ((playerLoc.locY + 75) > platform[i].y && (playerLoc.locY + 75) < (platform[i].y + 15))
+		{
+
+			// then check location on X for both object
+			if (platform[i].x < (playerLoc.locX + 60) && (playerLoc.locX + 15) < (platform[i].x + 60))
+			{
+				//make sure the player is jump onto the plate with velocity check
+				if (playerLoc.dy > 0)
+				{
+					playerLoc.dy = -10;
+				}
+			}
+		}
+
+
 	}
+
 }
-
-
 #endif 
 
