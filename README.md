@@ -5,6 +5,7 @@ This project is for the class final project.<br />
 Class is COP 3003, I made this project mainly at home.<br />
 
 ## Demonstration
+![Sample Image](running.png)
 ![Sample GIF](JNIzrIgziU.gif) 
 
 ## Documentation
