@@ -11,6 +11,7 @@ Class is COP 3003, I made this project mainly at home.<br />
 [Doxygen](https://nizisi.github.io/Projects-3003/html/)
 
 ## Diagrams
+![Sample Image](classd.png)
 ![Sample Image](docs/html/classloc_point.png)
 
 ## Built With
